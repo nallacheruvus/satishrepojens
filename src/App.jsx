@@ -1,5 +1,5 @@
 import './App.css'
-import Satish from '/Satish.png'
+import Satish from '/public/Satish.png'
 
 function App() {
   return (
