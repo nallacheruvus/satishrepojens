@@ -1,13 +1,8 @@
-# Fetching the latest node image on alpine linux
-FROM node:alpine AS development
-# Declaring env
-ENV NODE_ENV development
-# Setting up the work directory
-WORKDIR /react-app
-# Installing dependencies
-COPY ./package*.json /react-app
-RUN npm install
-# Copying all the files in our project
-COPY . .
-# Starting our application
-CMD ["npm","start"]
+# Set the working directory
+WORKDIR /app# Copy the package.json and package-lock.json files
+COPY package*.json ./# Install the dependencies
+RUN npm install# Copy the app files
+COPY . .# Build the app
+RUN npm run build# Expose the port
+EXPOSE 3000# Run the app
+CMD ["npm", "start"]
